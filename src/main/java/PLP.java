@@ -30,32 +30,32 @@ public class PLP {
 		
 		return productName;
 		 
-//        List<WebElement> productNames = driver.findElements(By.xpath("//div[@class='jsx-c3ec2b6b129f087d card_content_wrapper pt-0']//child::span[@class='jsx-c3ec2b6b129f087d card_title d-inline-block text-truncate w-100']"));
-//        List<WebElement> productPrices = driver.findElements(By.xpath("//div[@class='jsx-c3ec2b6b129f087d price']"));
-//
-//        
-//        
-//        
-//		String filePath = "C:\\Users\\DPT USER\\eclipse-workspace\\Assignment\\src\\test\\resources\\product_details.xlsx";
-//		FileInputStream fs = new FileInputStream(filePath);
-//		
-//        // Create an Excel workbook and sheet
-//        XSSFWorkbook workbook = new XSSFWorkbook(fs);
-//        XSSFSheet sheet = workbook.createSheet("PrDetails");
-//
-//        // Write product details to the Excel sheet
-//        for (int i = 0; i < productNames.size(); i++) {
-//            XSSFRow row = sheet.createRow(i);
-//            row.createCell(0).setCellValue(productNames.get(i).getText());
-//            row.createCell(1).setCellValue(productPrices.get(i).getText());
-//        }
-//
-//        // Write the workbook to a file and close resources
-//        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
-//            workbook.write(fileOut);
-//            fileOut.close();
-//        } finally {
-//            workbook.close();
-//        }
+       List<WebElement> productNames = driver.findElements(By.xpath("//div[@class='jsx-c3ec2b6b129f087d card_content_wrapper pt-0']//child::span[@class='jsx-c3ec2b6b129f087d card_title d-inline-block text-truncate w-100']"));
+       List<WebElement> productPrices = driver.findElements(By.xpath("//div[@class='jsx-c3ec2b6b129f087d price']"));
+
+       
+       
+       
+		String filePath = "C:\\Users\\DPT USER\\eclipse-workspace\\Assignment\\src\\test\\resources\\product_details.xlsx";
+		FileInputStream fs = new FileInputStream(filePath);
+		
+       // Create an Excel workbook and sheet
+       XSSFWorkbook workbook = new XSSFWorkbook(fs);
+       XSSFSheet sheet = workbook.createSheet("PrDetails");
+
+       // Write product details to the Excel sheet
+       for (int i = 0; i < productNames.size(); i++) {
+           XSSFRow row = sheet.createRow(i);
+           row.createCell(0).setCellValue(productNames.get(i).getText());
+           row.createCell(1).setCellValue(productPrices.get(i).getText());
+       }
+
+       // Write the workbook to a file and close resources
+       try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+           workbook.write(fileOut);
+           fileOut.close();
+       } finally {
+           workbook.close();
+       }
     }
 }
